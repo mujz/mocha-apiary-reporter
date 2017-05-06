@@ -1,3 +1,5 @@
+# Mocha Apiary Reporter
+
 Apiary Documentation for your Node.js RESTful API
 
 ![Apairy Screenshot](/screenshot.png)
