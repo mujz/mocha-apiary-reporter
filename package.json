@@ -1,0 +1,47 @@
+{
+  "name": "mocha-apiary-reporter",
+  "version": "1.1.0",
+  "description": "Generate API documentation using Apiary's Blueprint style, then plug it right into apiary.io to get beautiful docs!",
+  "keywords": [
+    "api",
+    "blueprint",
+    "apiary",
+    "express",
+    "restify",
+    "test",
+    "testing",
+    "documentation",
+    "docs",
+    "mocha",
+    "reporter",
+    "supertest",
+    "superagent"
+  ],
+  "author": "Mujtaba Al-Tameemi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mujz/mocha-apiary-reporter.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter mocha-apiary-reporter"
+  },
+  "dependencies": {
+    "cjson": "~0.5.0",
+    "deep": "0.0.2",
+    "lodash": "~4.17.4",
+    "mkdirp": "^0.5.1",
+    "sinon": "~2.2.0"
+  },
+  "devDependencies": {
+    "body-parser": "~1.17.1",
+    "expect": "~1.20.2",
+    "express": "~4.15.2",
+    "mocha": "~3.3.0",
+    "supertest": "~1.1.0"
+  },
+  "peerDependencies": {
+    "supertest": ">1.0.0"
+  }
+}

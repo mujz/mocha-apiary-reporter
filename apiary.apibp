@@ -1,0 +1,120 @@
+aFORMAT: 1A
+
+HOST: http://example.com/
+
+# Cats API
+
+Cats is a super simple API of cats and their human owners. Check out docs at: https://app.apiary.io/catsapi1
+
+## User Collection [/user]
+
+### Create a new user [POST /user]
+
+Creates a new user with 0 cats. If no email or name are specified, a 400 error is returned.
+
++ Request (application/json)
+
+        {
+            "name": "Mike Doe",
+            "email": "mdoe@example.com"
+        }
+
++ Response 200
+
+        {
+            "name": "Mike Doe",
+            "email": "mdoe@example.com",
+            "id": 2
+        }
+
++ Request (application/json)
+
+        {
+            "email": "mdoe@example.com"
+        }
+
++ Response 400
+
+        Must send a request body containing user's name and email
+
++ Request (application/json)
+
+        {
+            "name": "Mike Doe"
+        }
+
++ Response 400
+
+        Must send a request body containing user's name and email
+
+### Get User Information [GET /user]
+
+Gets the information of the user
+
++ Response 200
+
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "jdoe@example.com"
+        }
+
+## Cat Collection [/cat]
+
+### Create Cat [POST /cat]
+
+Creates a new cat and associates it to the user with ownerId
+
++ Request (application/json)
+
+        {
+            "name": "Tom",
+            "ownerId": 1
+        }
+
++ Response 200
+
+        {
+            "name": "Tom",
+            "ownerId": 1,
+            "id": 2
+        }
+
++ Request (application/json)
+
+        {
+            "name": "Tom",
+            "ownerId": 3
+        }
+
++ Response 400
+
+        Owner ID 3 does not exist
+
+### Update Cat [PUT /cat/1]
+
+Update the information of an already created cat.
+
++ Request (application/json)
+
+        {
+            "name": "Tom"
+        }
+
++ Response 200
+
+        {
+            "id": 1,
+            "name": "Tom",
+            "ownerId": 1
+        }
+
++ Request (application/json)
+
+        {
+            "name": "Tom"
+        }
+
++ Response 404
+
+        Cat not found
